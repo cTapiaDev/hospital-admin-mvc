@@ -36,7 +36,7 @@ A continuación, se detalla el avance del proyecto clase a clase.
 
 	En esta sesión inicial, se sentaron las bases del proyecto, creando la estructura fundamental de la aplicación y comprendiendo el flujo de una solicitud en el patrón MVC.
 
-	**Hitos Alcanzados:**
+	<strong>Hitos Alcanzados:</strong>
 	- Creación de la solución `HospitalAdminMVC` utilizando la plantilla de ASP.NET Core MVC.
 	- Implementación del primer controlador: `PacientesController`, con una acción `VerFicha`.
 	- Diseño de una vista estática (`VerFicha.cshtml`) para mostrar la información de un paciente.
@@ -58,7 +58,7 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos.
 #### Pasos
 1. Clona el repositorio en tu máquina local: 
 	```bash
-	git clone [https://github.com/cTapiaDev/hospital-admin-mvc.git](https://github.com/cTapiaDev/hospital-admin-mvc.git)
+	git clone https://github.com/cTapiaDev/hospital-admin-mvc.git
 	```
 2. Abre el archivo de solución (`HospitalAdminMVC.sln`) con Visual Studio 2022.
 3. Presiona `F5` o el botón de inicio para compilar y ejecutar la aplicación.
