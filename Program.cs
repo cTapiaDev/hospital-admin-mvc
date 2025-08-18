@@ -1,3 +1,6 @@
+using HospitalAdminMVC.Middleware;
+using HospitalAdminMVC.Services;
+
 namespace HospitalAdminMVC
 {
     public class Program
@@ -8,6 +11,7 @@ namespace HospitalAdminMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IHospitalInfoService, HospitalInfoService>();
 
             var app = builder.Build();
 
@@ -19,7 +23,10 @@ namespace HospitalAdminMVC
                 app.UseHsts();
             }
 
+            
+
             app.UseHttpsRedirection();
+            app.UseMiddleware<RegistroDeActividadMiddleware>();
             app.UseStaticFiles();
 
             app.UseRouting();
