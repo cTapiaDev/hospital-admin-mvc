@@ -1,0 +1,23 @@
+﻿
+@model IEnumerable<Paciente>
+<h1>Listado de Pacientes</h1>
+<a asp-action="Crear" class="btn btn-primary mb-3">Registrar Nuevo Paciente</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>RUT</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model)
+        {
+            <tr>
+                <td>@paciente.Nombre</td>
+                <td>@paciente.Rut</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

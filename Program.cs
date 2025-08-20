@@ -12,6 +12,7 @@ namespace HospitalAdminMVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IHospitalInfoService, HospitalInfoService>();
+            builder.Services.AddScoped<IServicioDeAuditoria, ServicioDeAuditoria>();
 
             var app = builder.Build();
 
@@ -26,7 +27,10 @@ namespace HospitalAdminMVC
             
 
             app.UseHttpsRedirection();
+
             app.UseMiddleware<RegistroDeActividadMiddleware>();
+            app.UseMiddleware<AuditoriaMiddleware>();
+
             app.UseStaticFiles();
 
             app.UseRouting();
