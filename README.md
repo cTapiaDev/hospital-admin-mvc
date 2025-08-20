@@ -49,6 +49,16 @@ En esta clase, profundizamos en la arquitectura interna de la aplicación. Se ex
 - Se implementó un `IGeneradorIdPaciente` como parte del taller práctico, encargado de crear identificadores únicos para los pacientes.
 - Los servicios fueron registrados en el contenedor de DI con un ciclo de vida `Scoped` y posteriormente inyectados en los constructores de `PacientesController` y `MedicosController` para ser utilizados en sus acciones.
 
+### 📋 Clase 3: Gestión de Pacientes y Médicos (CRUD) (20 de agosto del 2025)
+Esta sesión se centró en dar vida a la aplicación mediante la implementación de las operaciones fundamentales de **Crear** y **Leer** (CRUD). Se introdujeron los conceptos de **Modelos** con validación de datos y el manejo de formularios para la entrada de información.
+
+#### Hitos Alcanzados:
+- Se definió la clase `Paciente` en la carpeta `Models`, utilizando **Data Annotations** (`[Required]`, `[Display]`, etc.) para establecer reglas de validación de negocio.
+- Se implementó la acción `Index` en `PacientesController` para mostrar una lista de pacientes (simulada en memoria) en una vista con formato de tabla.
+- Se construyó el formulario de registro de nuevos pacientes (`Crear.cshtml`) utilizando **Tag Helpers** (`asp-action`, `asp-for`, `asp-validation-for`) para un código más limpio y mantenible.
+- Se crearon dos acciones `Crear` en el controlador: una para mostrar el formulario (`GET`) y otra para procesar los datos enviados (`POST`), incluyendo la validación del `ModelState`.
+- Se implementó la funcionalidad para ver la ficha completa de un paciente individual, pasando el `Id` a través de la ruta y buscando el registro en el controlador.
+
 *(Aquí se agregarán las futuras clases...)*
 
 ---
