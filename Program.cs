@@ -1,5 +1,7 @@
+using HospitalAdminMVC.Data;
 using HospitalAdminMVC.Middleware;
 using HospitalAdminMVC.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospitalAdminMVC
 {
@@ -8,11 +10,14 @@ namespace HospitalAdminMVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IHospitalInfoService, HospitalInfoService>();
             builder.Services.AddScoped<IServicioDeAuditoria, ServicioDeAuditoria>();
+            
+            builder.Services.AddDbContext<HospitalDbContext>(options => options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 

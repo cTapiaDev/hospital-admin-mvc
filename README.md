@@ -59,6 +59,17 @@ Esta sesión se centró en dar vida a la aplicación mediante la implementación
 - Se crearon dos acciones `Crear` en el controlador: una para mostrar el formulario (`GET`) y otra para procesar los datos enviados (`POST`), incluyendo la validación del `ModelState`.
 - Se implementó la funcionalidad para ver la ficha completa de un paciente individual, pasando el `Id` a través de la ruta y buscando el registro en el controlador.
 
+### 💾 Clase 4: Conexión a la Base de Datos Clínica con EF Core (22 de agosto del 2025)
+En esta sesión crucial, se abandonaron los datos en memoria para conectar la aplicación a una base de datos persistente. Se introdujo el concepto de **ORM (Object-Relational Mapper)** y se utilizó **Entity Framework Core** para gestionar la comunicación con la base de datos.
+
+#### Hitos Alcanzados:
+- Se explicó el rol de EF Core como el puente entre el código C# y la base de datos relacional.
+- Se creó y configuró el `HospitalDbContext`, definiendo los `DbSet` para las entidades `Paciente` y `Medico`.
+- Se generó la primera migración (`CreacionInicial`) para crear el esquema de la base de datos (tablas y columnas) a partir de los modelos existentes.
+- Se implementó una `IDesignTiemDbContextFactory` para resolver problemas de compatibilidad entre las herramientas de diseño de EF Core y el proyecto .NET 8, un desafío común en entornos de desarrollo.
+- Se refactorizó completamente el `PacientesController` para que todas sus operaciones leyeran y escribieran en la base de datos a través del `DbContext`.
+- La tarea base consistió en migrar el `MedicosController` en su totalidad, implementando la funcionalidad CRUD completa (Crear, LEer, Editar y Eliminar) conectada a la base de datos.
+
 *(Aquí se agregarán las futuras clases...)*
 
 ---

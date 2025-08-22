@@ -16,7 +16,11 @@
             <tr>
                 <td>@paciente.Nombre</td>
                 <td>@paciente.Rut</td>
-                <td></td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@paciente.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Detalles" asp-route-id="@paciente.Id" class="btn btn-info btn-sm">Detalles</a>
+                    <a asp-action="Eliminar" asp-route-id="@paciente.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
             </tr>
         }
     </tbody>
